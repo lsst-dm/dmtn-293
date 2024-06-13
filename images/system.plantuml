@@ -1,0 +1,93 @@
+@startuml system-architecture1
+
+left to right direction
+
+skinparam BackgroundColor transparent
+skinparam defaultTextAlignment center
+skinparam shadowing true
+skinparam CollectionsBackgroundColor LightGray
+skinparam RectangleBackgroundColor GhostWhite
+skinparam DatabaseBackgroundColor LightSteelBlue
+skinparam ArtifactBackgroundColor LightSteelBlue
+skinparam AgentBackgroundColor WhiteSmoke
+
+collections pipeline as "AP pipeline"
+
+rectangle APDB as "APDB\nCassandra" {
+    database tables as "DIA/SS\ntables" {
+    }
+    database replica_tables as "Replica\nchunks" {
+    }
+}
+
+pipeline <==> tables #line:mediumblue
+pipeline ==> replica_tables #line:mediumblue
+
+agent replication as "Replication\nprocess"
+
+replica_tables ==> replication #line:mediumblue
+
+database PPDB as "PPDB\nSQL" {
+}
+
+replication ==> PPDB #line:mediumblue
+
+agent daily_updates as "Daily APDB\nupdates"
+
+tables <== daily_updates #line:maroon
+replica_tables <== daily_updates #line:maroon
+
+artifact DA as "Updated\nrecords"
+daily_updates <== DA #line:maroon
+
+
+agent SSP
+PPDB ==> SSP #line:maroon
+DA <== SSP #line:maroon
+
+@enduml
+
+
+@startuml system-architecture2
+left to right direction
+
+skinparam BackgroundColor transparent
+skinparam defaultTextAlignment center
+skinparam shadowing true
+skinparam CollectionsBackgroundColor LightGray
+skinparam RectangleBackgroundColor GhostWhite
+skinparam DatabaseBackgroundColor LightSteelBlue
+skinparam AgentBackgroundColor WhiteSmoke
+
+collections pipeline as "AP pipeline"
+
+rectangle APDB as "APDB\nCassandra" {
+    database tables as "DIA/SS\ntables" {
+    }
+    database replica_tables as "Replica\nchunks" {
+    }
+}
+
+pipeline <==> tables #line:mediumblue
+pipeline ==> replica_tables #line:mediumblue
+
+agent replication as "Replication\nprocess"
+
+replica_tables ==> replication #line:mediumblue
+
+database PPDB as "PPDB\nSQL" {
+}
+
+replication ==> PPDB #line:mediumblue
+
+agent daily_updates as "Daily APDB\nupdates"
+
+tables <== daily_updates #line:maroon
+
+daily_updates <== PPDB #line:maroon
+
+
+agent SSP
+PPDB <==> SSP #line:maroon
+
+@enduml
