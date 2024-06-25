@@ -166,7 +166,7 @@ There are two possible options for performing daily updates:
 - store all updates in PPDB, then query PPDB and propagate them to APDB.
 
 There are pros and cons for each of these approaches.
-In the first case APDB becomes the only authoritative source for all information and PPDB is only updated by a single agent-replication process.
+In the first case APDB becomes the only authoritative source for all information and PPDB is only updated by a single agent.
 This should simplify PPDB implementation as it will not need any additional structures to track updates that need to be sent to APDB later.
 SSP and other actors could potentially send their updates directly to APDB using an extended APDB API, and avoiding intermediate agents.
 On the other hand this option will make the replication process more complex as it will need to handle different types of updates.
