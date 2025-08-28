@@ -7,6 +7,7 @@ github_default_branch = "main"
 date_created = 2024-06-10T19:40:25Z
 organization.name = "Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
+doi = "10.71929/rubin/2586676"
 license.id = "CC-BY-4.0"
 
 [technote.status]
