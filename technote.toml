@@ -7,24 +7,27 @@ github_default_branch = "main"
 date_created = 2024-06-10T19:40:25Z
 organization.name = "Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
+doi = "10.71929/rubin/2586676"
 license.id = "CC-BY-4.0"
 
 [technote.status]
 state = "draft"
 
 [[technote.authors]]
-name.given = "Andy"
-name.family = "Salnikov"
 internal_id = "salnikova"
 orcid = "https://orcid.org/0000-0002-3623-0161"
+name = {given = "Andrei", family = "Salnikov"}
 [[technote.authors.affiliations]]
 name = "SLAC National Accelerator Laboratory"
 internal_id = "SLAC"
 address = "2575 Sand Hill Rd., Menlo Park, CA 94025, USA"
+ror = "https://ror.org/05gzmn429"
 [[technote.authors]]
 name = {given = "Jeremy", family = "McCormick"}
 internal_id = "mccormickj"
+orcid = "https://orcid.org/0009-0005-0229-7607"
 [[technote.authors.affiliations]]
 name = "SLAC National Accelerator Laboratory"
 internal_id = "SLAC"
 address = "2575 Sand Hill Rd., Menlo Park, CA 94025, USA"
+ror = "https://ror.org/05gzmn429"

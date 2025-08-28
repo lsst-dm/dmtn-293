@@ -2,12 +2,18 @@
 Current status of APDB and PPDB implementation
 ##############################################
 
+.. image:: https://img.shields.io/badge/DOI-10.71929/rubin/2586676-blue.svg
+  :target: https://doi.org/10.71929/rubin/2586676
+  :alt: DOI: 10.71929/rubin/2586676
+  :height: 16
+
 .. abstract::
 
    The design of the Alert Production DataBase (APDB) and Prompt Products DataBase (PPDB) has been evolving for the past few years as a result of various tests and updated requirements.
    This technical note describes the current state of these systems, as well as issues related to scalability and performance.
    It also discusses unresolved issues in the system's architecture and possible future directions.
 
+**DOI:** `10.71929/rubin/2586676 <https://doi.org/10.71929/rubin/2586676>`_
 
 Abridged History
 ================
